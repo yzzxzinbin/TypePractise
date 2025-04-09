@@ -26,6 +26,7 @@
 #include "corpus_manager.h"
 #include "settings_manager.h"  // 添加新的设置管理器
 #include "gui_helper.h"
+#include "key_practice.h"      // 添加新的键盘练习头文件
 #endif
 
 using namespace std;

@@ -293,6 +293,42 @@ string CorpusManager::extractPracticeSegment(const string &fullText, int minWord
     return segment + " "; // 添加空格以便最后一个词能被正确检查
 }
 
+// 从文本中选择一段用于中文拼音练习
+string CorpusManager::extractChinesePinyinSegment(const string &fullText, int minChars)
+{
+    // 中文拼音文本通常是以空格分隔的单个拼音
+    istringstream iss(fullText);
+    vector<string> pinyinWords;
+    string word;
+
+    while (iss >> word)
+    {
+        pinyinWords.push_back(word);
+    }
+
+    if (pinyinWords.size() <= minChars)
+    {
+        return fullText + " "; // 如果文本很短，直接返回全文
+    }
+
+    // 随机选择起始位置
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> distrib(0, max(0, static_cast<int>(pinyinWords.size() - minChars)));
+    int startPos = distrib(gen);
+
+    // 提取文本片段
+    string segment;
+    for (int i = startPos; i < min(startPos + minChars, static_cast<int>(pinyinWords.size())); ++i)
+    {
+        if (!segment.empty())
+            segment += " ";
+        segment += pinyinWords[i];
+    }
+
+    return segment + " "; // 添加空格以便最后一个词能被正确检查
+}
+
 // 语料库选择界面
 Corpus CorpusManager::selectCorpus(WINDOW *headerWin, WINDOW *contentWin, WINDOW *statusWin)
 {

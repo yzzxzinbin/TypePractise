@@ -52,6 +52,9 @@ public:
     // 从文本中选择一段用于练习
     std::string extractPracticeSegment(const std::string& fullText, int minWords);
     
+    // 从文本中选择一段用于中文拼音练习
+    std::string extractChinesePinyinSegment(const std::string& fullText, int minChars);
+    
     // 语料库选择界面
     Corpus selectCorpus(WINDOW* headerWin, WINDOW* contentWin, WINDOW* statusWin);
     
