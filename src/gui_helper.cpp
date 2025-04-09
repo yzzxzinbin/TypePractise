@@ -40,10 +40,7 @@ void initColors()
     init_pair(COLOR_DEFAULT, COLOR_WHITE, COLOR_BLACK);        // 默认白字黑底
     init_pair(COLOR_CORRECT, COLOR_GREEN, COLOR_BLACK);        // 正确为绿字
     init_pair(COLOR_INCORRECT, COLOR_RED, COLOR_BLACK);        // 错误为红字
-    
-    // 修正这一行 - 当前字符应该是黑字黄底，而不是黄字黑底
     init_pair(COLOR_CURRENT, COLOR_BLACK, COLOR_YELLOW);       // 当前字符为黑字黄底
-    
     init_pair(COLOR_STATS, COLOR_CYAN, COLOR_BLACK);           // 统计信息为青字
     init_pair(COLOR_HEADER, COLOR_BLACK, COLOR_WHITE);         // 标题栏为黑字白底
     init_pair(COLOR_GUIDE, COLOR_CYAN, COLOR_BLACK);           // 导引文字为青色黑底

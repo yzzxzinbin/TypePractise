@@ -169,7 +169,14 @@ void CorpusManager::createDefaultCorpus()
     {
         hardFile << "Difficult texts contain complex vocabulary, technical terms, and various symbols.\n";
         hardFile << "They might include programming code or scientific terminology (e.g., C++, quantum physics).\n";
-        hardFile << "These exercises are designed to challenge experienced typists and build advanced skills.";
+        hardFile << "These exercises are designed to challenge experienced typists and build advanced skills.\n";
+        hardFile << "China has spoken highly of its relationship with the Association of Southeast Asian Nations, ";
+        hardFile << "describing it as one of the most dynamic and fruitful examples of cooperation ";
+        hardFile << "in the Asia-Pacific region and the world at large.\n";
+        hardFile << "Speaking on Tuesday at a regular news conference, Foreign Ministry spokesman Lin Jian ";
+        hardFile << "reaffirmed China's commitment to the principles of amity, sincerity, mutual benefit and inclusiveness, ";
+        hardFile << "bringing greater benefits to people across Asia and injecting more stability and hope ";
+        hardFile << "into the world by building an Asian community with a shared future.\n";
         hardFile.close();
     }
 
@@ -183,27 +190,23 @@ void CorpusManager::createDefaultCorpus()
         chineseFile << "shou xian wang luo shi jie rang quan qiu bian de geng jia mi qie\n";
         chineseFile << "tong guo dian zi you jian she jiao mei ti ren men ke yi ji shi gou tong\n";
         chineseFile << "sui zhe 5G ji shu de pu ji shu ju chuan shu su du da fu ti sheng\n";
-        chineseFile << "wei xu ni xian shi he zeng qiang xian shi ji shu ti gong le geng duo ke neng\n\n";
-
+        chineseFile << "wei xu ni xian shi he zeng qiang xian shi ji shu ti gong le geng duo ke neng\n";
         chineseFile << "qi ci ren gong zhi neng zheng zai shen ru ge ge hang ye\n";
         chineseFile << "ji qi xue xi suan fa neng cong hai liang shu ju zhong ti qu you xiao xin xi\n";
         chineseFile << "zai yi liao ling yu AI ke yi bang zhu yi sheng zuo chu geng zhun que de zhen duan\n";
         chineseFile << "er zi dong jia shi ji shu ze you wang jiang jiao tong shi gu jiang di 90%\n";
         chineseFile << "tong shi sheng wu ke ji de jin bu ye ling ren xing fen\n";
         chineseFile << "ji yin bian ji ji shu CRISPR wei zhi liao ji bing ti gong le xin xi wang\n";
-        chineseFile << "ren zao qi guan he gan xi bao zai sheng ji shu wei yi xue dai lai ge ming\n\n";
-
+        chineseFile << "ren zao qi guan he gan xi bao zai sheng ji shu wei yi xue dai lai ge ming\n";
         chineseFile << "ling yi fang mian ke ji ye dai lai le tiao zhan\n";
         chineseFile << "shu ju yin si he wang luo an quan cheng wei quan qiu guan zhu de hua ti\n";
         chineseFile << "mei nian yin shu ju xie lou zao cheng de sun shi chao guo shi yi mei yuan\n";
         chineseFile << "xu ni bi quan he qu kuai lian ji shu sui ran dai lai jin rong chuang xin\n";
-        chineseFile << "dan ye yin fa le guan yu jin rong wen ding xing de zheng lun\n\n";
-
+        chineseFile << "dan ye yin fa le guan yu jin rong wen ding xing de zheng lun\n";
         chineseFile << "zai wei lai ke ji jiang ji xu shen ru fa zhan\n";
         chineseFile << "wu lian wang shi dai de dao lai shi she bei jiang shi shi lian jie\n";
         chineseFile << "liu dian chi he ren gong tai yang deng xin neng yuan ji shu jiang jie jue huan jing wen ti\n";
-        chineseFile << "hang tian ke ji rang ren lei you wang zai ben shi ji mo shang jian li yue qiu ji di\n\n";
-
+        chineseFile << "hang tian ke ji rang ren lei you wang zai ben shi ji mo shang jian li yue qiu ji di\n";
         chineseFile << "ke ji de li liang wu xian da dan xu yao yu she hui lun li xiang jie he\n";
         chineseFile << "zhi you zai bao hu ren lei li yi de qian ti xia\n";
         chineseFile << "ke ji jin bu cai neng zhen zheng fu wu yu ren lei ming yun";

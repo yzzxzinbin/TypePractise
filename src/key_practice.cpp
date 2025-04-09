@@ -45,80 +45,79 @@ KeyboardPractice::~KeyboardPractice()
 // 初始化键盘布局
 void KeyboardPractice::initKeyboardLayout()
 {
-    // QWERTY键盘布局
+    // QWERTY键盘布局 - 更新按键位置以匹配实际键盘布局
     keyboardLayout = {
-        "┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐",
-        "│ ` │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │",
-        "├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤",
-        "│   │ q │ w │ e │ r │ t │ y │ u │ i │ o │ p │ [ │ ] │",
-        "├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤",
-        "│   │ a │ s │ d │ f │ g │ h │ j │ k │ l │ ; │ ' │   │",
-        "├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤",
-        "│   │ z │ x │ c │ v │ b │ n │ m │ , │ . │ / │   │   │",
-        "└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘"
+        "┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐",
+        "│ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │",
+        "├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┐",
+        "│ q │ w │ e │ r │ t │ y │ u │ i │ o │ p │ [ │ ] │ \\ │",
+        "├──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┘",
+        "│  │ a │ s │ d │ f │ g │ h │ j │ k │ l │ ; │ ' │   │", 
+        "├─┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┘",
+        "│ │   │ z │ x │ c │ v │ b │ n │ m │ , │ . │ / │   │",
+        "└─┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘"
     };
     
-    // 设置键位映射
-    // 行1: ` 1 2 3 4 5 6 7 8 9 0 - =
-    for (int i = 0; i < 13; i++) {
-        if (i == 0) keyPositions['`'] = make_pair(1, i*4+2);
-        else if (i == 1) keyPositions['1'] = make_pair(1, i*4+2);
-        else if (i == 2) keyPositions['2'] = make_pair(1, i*4+2);
-        else if (i == 3) keyPositions['3'] = make_pair(1, i*4+2);
-        else if (i == 4) keyPositions['4'] = make_pair(1, i*4+2);
-        else if (i == 5) keyPositions['5'] = make_pair(1, i*4+2);
-        else if (i == 6) keyPositions['6'] = make_pair(1, i*4+2);
-        else if (i == 7) keyPositions['7'] = make_pair(1, i*4+2);
-        else if (i == 8) keyPositions['8'] = make_pair(1, i*4+2);
-        else if (i == 9) keyPositions['9'] = make_pair(1, i*4+2);
-        else if (i == 10) keyPositions['0'] = make_pair(1, i*4+2);
-        else if (i == 11) keyPositions['-'] = make_pair(1, i*4+2);
-        else if (i == 12) keyPositions['='] = make_pair(1, i*4+2);
+    // 设置键位映射 - 调整后的坐标
+    // 行1: 1 2 3 4 5 6 7 8 9 0 - = (数字行左移了四格)
+    for (int i = 0; i < 12; i++) {
+        if (i == 0) keyPositions['1'] = make_pair(1, i*4+2);
+        else if (i == 1) keyPositions['2'] = make_pair(1, i*4+2);
+        else if (i == 2) keyPositions['3'] = make_pair(1, i*4+2);
+        else if (i == 3) keyPositions['4'] = make_pair(1, i*4+2);
+        else if (i == 4) keyPositions['5'] = make_pair(1, i*4+2);
+        else if (i == 5) keyPositions['6'] = make_pair(1, i*4+2);
+        else if (i == 6) keyPositions['7'] = make_pair(1, i*4+2);
+        else if (i == 7) keyPositions['8'] = make_pair(1, i*4+2);
+        else if (i == 8) keyPositions['9'] = make_pair(1, i*4+2);
+        else if (i == 9) keyPositions['0'] = make_pair(1, i*4+2);
+        else if (i == 10) keyPositions['-'] = make_pair(1, i*4+2);
+        else if (i == 11) keyPositions['='] = make_pair(1, i*4+2);
     }
 
-    // 行2: q w e r t y u i o p [ ]
-    for (int i = 1; i < 13; i++) {
-        if (i == 1) keyPositions['q'] = make_pair(3, i*4+2);
-        else if (i == 2) keyPositions['w'] = make_pair(3, i*4+2);
-        else if (i == 3) keyPositions['e'] = make_pair(3, i*4+2);
-        else if (i == 4) keyPositions['r'] = make_pair(3, i*4+2);
-        else if (i == 5) keyPositions['t'] = make_pair(3, i*4+2);
-        else if (i == 6) keyPositions['y'] = make_pair(3, i*4+2);
-        else if (i == 7) keyPositions['u'] = make_pair(3, i*4+2);
-        else if (i == 8) keyPositions['i'] = make_pair(3, i*4+2);
-        else if (i == 9) keyPositions['o'] = make_pair(3, i*4+2);
-        else if (i == 10) keyPositions['p'] = make_pair(3, i*4+2);
-        else if (i == 11) keyPositions['['] = make_pair(3, i*4+2);
-        else if (i == 12) keyPositions[']'] = make_pair(3, i*4+2);
+    // 行2: q w e r t y u i o p [ ] (qwer行已左移一个字符)
+    for (int i = 0; i < 12; i++) {
+        if (i == 0) keyPositions['q'] = make_pair(3, i*4+2);
+        else if (i == 1) keyPositions['w'] = make_pair(3, i*4+2);
+        else if (i == 2) keyPositions['e'] = make_pair(3, i*4+2);
+        else if (i == 3) keyPositions['r'] = make_pair(3, i*4+2);
+        else if (i == 4) keyPositions['t'] = make_pair(3, i*4+2);
+        else if (i == 5) keyPositions['y'] = make_pair(3, i*4+2);
+        else if (i == 6) keyPositions['u'] = make_pair(3, i*4+2);
+        else if (i == 7) keyPositions['i'] = make_pair(3, i*4+2);
+        else if (i == 8) keyPositions['o'] = make_pair(3, i*4+2);
+        else if (i == 9) keyPositions['p'] = make_pair(3, i*4+2);
+        else if (i == 10) keyPositions['['] = make_pair(3, i*4+2);
+        else if (i == 11) keyPositions[']'] = make_pair(3, i*4+2);
     }
 
-    // 行3: a s d f g h j k l ; '
-    for (int i = 1; i < 12; i++) {
-        if (i == 1) keyPositions['a'] = make_pair(5, i*4+2);
-        else if (i == 2) keyPositions['s'] = make_pair(5, i*4+2);
-        else if (i == 3) keyPositions['d'] = make_pair(5, i*4+2);
-        else if (i == 4) keyPositions['f'] = make_pair(5, i*4+2);
-        else if (i == 5) keyPositions['g'] = make_pair(5, i*4+2);
-        else if (i == 6) keyPositions['h'] = make_pair(5, i*4+2);
-        else if (i == 7) keyPositions['j'] = make_pair(5, i*4+2);
-        else if (i == 8) keyPositions['k'] = make_pair(5, i*4+2);
-        else if (i == 9) keyPositions['l'] = make_pair(5, i*4+2);
-        else if (i == 10) keyPositions[';'] = make_pair(5, i*4+2);
-        else if (i == 11) keyPositions['\''] = make_pair(5, i*4+2);
+    // 行3: a s d f g h j k l ; ' (asdf行左移了1个字符)
+    for (int i = 0; i < 11; i++) {
+        if (i == 0) keyPositions['a'] = make_pair(5, (i+1)*4+1);
+        else if (i == 1) keyPositions['s'] = make_pair(5, (i+1)*4+1);
+        else if (i == 2) keyPositions['d'] = make_pair(5, (i+1)*4+1);
+        else if (i == 3) keyPositions['f'] = make_pair(5, (i+1)*4+1);
+        else if (i == 4) keyPositions['g'] = make_pair(5, (i+1)*4+1);
+        else if (i == 5) keyPositions['h'] = make_pair(5, (i+1)*4+1);
+        else if (i == 6) keyPositions['j'] = make_pair(5, (i+1)*4+1);
+        else if (i == 7) keyPositions['k'] = make_pair(5, (i+1)*4+1);
+        else if (i == 8) keyPositions['l'] = make_pair(5, (i+1)*4+1);
+        else if (i == 9) keyPositions[';'] = make_pair(5, (i+1)*4+1);
+        else if (i == 10) keyPositions['\''] = make_pair(5, (i+1)*4+1);
     }
 
-    // 行4: z x c v b n m , . /
-    for (int i = 1; i < 11; i++) {
-        if (i == 1) keyPositions['z'] = make_pair(7, i*4+2);
-        else if (i == 2) keyPositions['x'] = make_pair(7, i*4+2);
-        else if (i == 3) keyPositions['c'] = make_pair(7, i*4+2);
-        else if (i == 4) keyPositions['v'] = make_pair(7, i*4+2);
-        else if (i == 5) keyPositions['b'] = make_pair(7, i*4+2);
-        else if (i == 6) keyPositions['n'] = make_pair(7, i*4+2);
-        else if (i == 7) keyPositions['m'] = make_pair(7, i*4+2);
-        else if (i == 8) keyPositions[','] = make_pair(7, i*4+2);
-        else if (i == 9) keyPositions['.'] = make_pair(7, i*4+2);
-        else if (i == 10) keyPositions['/'] = make_pair(7, i*4+2);
+    // 行4: z x c v b n m , . / (zxcv行左移了2格)
+    for (int i = 0; i < 10; i++) {
+        if (i == 0) keyPositions['z'] = make_pair(7, (i+2)*4+0);
+        else if (i == 1) keyPositions['x'] = make_pair(7, (i+2)*4+0);
+        else if (i == 2) keyPositions['c'] = make_pair(7, (i+2)*4+0);
+        else if (i == 3) keyPositions['v'] = make_pair(7, (i+2)*4+0);
+        else if (i == 4) keyPositions['b'] = make_pair(7, (i+2)*4+0);
+        else if (i == 5) keyPositions['n'] = make_pair(7, (i+2)*4+0);
+        else if (i == 6) keyPositions['m'] = make_pair(7, (i+2)*4+0);
+        else if (i == 7) keyPositions[','] = make_pair(7, (i+2)*4+0);
+        else if (i == 8) keyPositions['.'] = make_pair(7, (i+2)*4+0);
+        else if (i == 9) keyPositions['/'] = make_pair(7, (i+2)*4+0);
     }
     
     // 空格键特殊处理
@@ -149,9 +148,9 @@ void KeyboardPractice::drawKeyboard()
     }
     
     // 在底部添加空格键
-    mvwprintw(keyboardWin, 8, 10, "┌───────────────────────────┐");
-    mvwprintw(keyboardWin, 9, 10, "│          SPACE            │");
-    mvwprintw(keyboardWin, 10, 10, "└───────────────────────────┘");
+    mvwprintw(keyboardWin, 8, 10, "┌───┴───┴───┴───┴───┴───┴───┤");
+    mvwprintw(keyboardWin, 9, 10, "|           SPACE           |");
+    mvwprintw(keyboardWin, 10, 10,"└───────────────────────────┘");
     
     wrefresh(keyboardWin);
 }
@@ -172,11 +171,11 @@ void KeyboardPractice::drawMenu()
     // 绘制菜单标题 - 居中显示
     wattron(menuWin, COLOR_PAIR(COLOR_HEADER) | A_BOLD);
     
-    string title = "SELECT PRACTICE TYPE";
+    string title = " SELECT PRACTICE TYPE  ";
     int titlePos = (menuWidth - title.length()) / 2;
     mvwprintw(menuWin, 1, titlePos > 0 ? titlePos : 1, "%s", title.c_str());
     
-    string separator = "===================";
+    string separator = "=======================";
     int separatorPos = (menuWidth - separator.length()) / 2;
     mvwprintw(menuWin, 2, separatorPos > 0 ? separatorPos : 1, "%s", separator.c_str());
     
@@ -220,13 +219,13 @@ void KeyboardPractice::highlightKey(char key, int colorPair)
         // 特殊处理空格键
         if (lowerKey == ' ') {
             wattron(keyboardWin, COLOR_PAIR(colorPair) | A_BOLD);
-            mvwprintw(keyboardWin, 9, 11, "         SPACE          ");
+            mvwprintw(keyboardWin, 9, 11, "           SPACE           ");
             wattroff(keyboardWin, COLOR_PAIR(colorPair) | A_BOLD);
         } else {
             // 高亮单个键
-            wattron(keyboardWin, COLOR_PAIR(colorPair) | A_BOLD);
+            wattron(keyboardWin, COLOR_PAIR(colorPair) );
             mvwaddch(keyboardWin, y, x, lowerKey);
-            wattroff(keyboardWin, COLOR_PAIR(colorPair) | A_BOLD);
+            wattroff(keyboardWin, COLOR_PAIR(colorPair) );
         }
         
         wrefresh(keyboardWin);
