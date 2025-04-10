@@ -3,9 +3,9 @@
 using namespace GUIHelper; // 使用GUI辅助模块命名空间
 
 // 全局变量的定义
-const string CORPUS_DIR = "k:\\test program\\TypePractise\\corpus";
-const string USER_DIR = "k:\\test program\\TypePractise\\users";
-const string SETTINGS_DIR = "k:\\test program\\TypePractise\\settings"; // 添加设置目录
+const string CORPUS_DIR = ".\\corpus";
+const string USER_DIR = ".\\users";
+const string SETTINGS_DIR = ".\\settings"; // 添加设置目录
 UserManager *userManager = nullptr;
 StatisticsManager *statsManager = nullptr;
 CorpusManager *corpusManager = nullptr;
